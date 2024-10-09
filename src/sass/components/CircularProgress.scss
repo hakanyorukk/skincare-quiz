@@ -1,0 +1,27 @@
+.progress-container {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .progress-circle {
+    position: relative;
+    transform: rotate(-90deg);
+  }
+
+  .progress-background {
+    stroke: $color-progress-stroke;
+  }
+
+  .progress-bar {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+  }
+  .progress-label {
+    position: absolute;
+    font-size: 1.8rem;
+    text-align: center;
+    color: $color-black;
+  }
+}

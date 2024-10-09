@@ -8,13 +8,13 @@
 
 .question {
   display: flex;
-  max-width: 100rem;
+  max-width: 130rem;
   height: 35rem;
   border: 3px solid red;
 
   &-box {
-    width: 80%;
-    color: #1c2635;
+    width: 85%;
+    color: $color-black;
 
     &__title {
       font-size: 4rem;
@@ -36,40 +36,60 @@
 
     &__answer {
       font-family: "Montserrat", sans-serif;
+      color: $color-black;
+      display: flex;
+      justify-content: start;
       font-size: 1.8rem;
-      border: 1px solid #5bc1ed;
-      padding: 0.5rem 2.2rem;
+      border: 1px solid $color-border;
+      padding: 0.8rem 2.4rem;
       border-radius: 0.6rem;
+      cursor: pointer;
+      background: none;
+      min-width: 18rem;
+
+      &.selected,
+      &:hover {
+        background-color: $color-primary;
+      }
     }
 
     &__buttons {
       display: flex;
       justify-content: center;
       gap: 3rem;
+      align-items: center;
 
       &__back {
+        cursor: pointer;
         background-color: transparent;
         border: none;
-        border-bottom: 1px solid black;
-        padding-bottom: 0.2rem;
-        color: #677487;
+        border-bottom: 1px solid $color-secondary;
+        color: $color-secondary;
       }
 
       &__forward {
-        padding: 1rem 2.4rem;
+        cursor: pointer;
+        padding: 1.2rem 3rem;
         font-size: 1.4rem;
-        background-color: #c3edff;
+        background-color: $color-primary;
         display: flex;
         align-items: center;
-        gap: 1rem;
         border: none;
         border-radius: 0.8rem;
+
+        span {
+          gap: 1rem;
+          display: flex;
+          align-items: center;
+        }
       }
     }
   }
 
   &-progressbar {
-    width: 20%;
-    background-color: aliceblue;
+    width: 15%;
+    position: relative;
+    margin-top: 1rem;
+    margin-left: 4rem;
   }
 }

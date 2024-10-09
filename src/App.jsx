@@ -2,16 +2,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home"; // Your home page or questions list component
 import QuestionPage from "./pages/QuestionPage"; // Component for displaying individual questions
 import { questions } from "./utils/utils";
+import Results from "./pages/Results";
 
 function App() {
   return (
     <Router>
       <div>
-        {/* <nav>
-          <Link to="/">Home</Link>
-        </nav> */}
         <Routes>
-          <Route path="/" element={<Home questions={questions} />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/results" element={<Results />} />
           {/* Map each question to its own route */}
           {questions.map((q) => (
             <Route
