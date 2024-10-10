@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useQuiz } from "../context/QuizContext";
 import ProductItem from "./ProductItem";
+import { useWishlist } from "../context/WishlistContext";
 
 function ProductsBoxSlider() {
   const { filteredProducts } = useQuiz();
+  const { wishlist } = useWishlist();
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  //const dividedArray = divideArrayWithIndices(filteredProducts);
+  // console.log(wishlist);
 
   const nextCards = () => {
     setCurrentIndex(currentIndex + 1);
@@ -25,7 +27,17 @@ function ProductsBoxSlider() {
     return result;
   }
 
-  const dividedArray = divideArrayWithIndices(filteredProducts);
+  // Merge wishlist items with the rest of the products
+  const sortedProducts = [
+    ...wishlist, // Wishlist products first
+    ...filteredProducts.filter(
+      (product) => !wishlist.some((item) => item.id === product.id)
+    ), // Non-wishlist products
+  ];
+
+  //const dividedArray = divideArrayWithIndices(filteredProducts);
+  const dividedArray = divideArrayWithIndices(sortedProducts);
+  console.log(dividedArray.length);
   return (
     <div className="products">
       <div className="products-box">
@@ -41,6 +53,7 @@ function ProductsBoxSlider() {
               to the end of your day.
             </p>
           </div>
+
           {dividedArray[currentIndex]?.map((product) => {
             //console.log(product.value.images[0].src);
             return (
@@ -61,9 +74,11 @@ function ProductsBoxSlider() {
         </div>
       </div>
       <div className="products-button">
-        <button onClick={nextCards}>
-          <img src="/img/frame.svg" />
-        </button>
+        {dividedArray.length !== currentIndex + 1 && (
+          <button onClick={nextCards}>
+            <img src="/img/frame.svg" />
+          </button>
+        )}
       </div>
     </div>
   );

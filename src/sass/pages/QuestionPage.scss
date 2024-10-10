@@ -9,19 +9,22 @@
 .question {
   display: flex;
   max-width: 130rem;
-  height: 35rem;
-  border: 3px solid red;
+  min-height: 40rem;
 
   &-box {
     width: 85%;
     color: $color-black;
-
+    justify-content: center;
     &__title {
-      font-size: 4rem;
-      font-weight: 400;
-      font-family: "Lora", serif;
+      font-size: 4.6rem;
+      font-weight: 400; // Thinner font weight
+      letter-spacing: 0.1rem;
+      font-family: "Lato", sans-serif; // Different font family
       text-align: center;
-      padding: 2rem 10rem;
+      padding: 2rem 4rem;
+      max-width: 70rem;
+
+      margin-inline: auto;
     }
 
     &__answers {

@@ -34,9 +34,13 @@
   margin-left: auto;
   margin-right: auto;
   height: 50%;
-  max-width: 80rem;
-  border: 3px solid red;
+  //max-width: 80rem;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  &-box {
+    max-width: 80rem;
+  }
 }
 
 .home-button {
@@ -45,4 +49,14 @@
   border-radius: 0.7rem;
   background-color: $color-primary;
   border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }

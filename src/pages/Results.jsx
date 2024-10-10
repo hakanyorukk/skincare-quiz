@@ -17,10 +17,10 @@ function Results() {
       </div>
       <div className="results">
         <div className="results-box">
-          <h1 className="heading-primary">
+          <h1 className="heading-primary-result">
             Build you everyday self care routine.
           </h1>
-          <h3 className="heading-secondary">
+          <h3 className="heading-secondary-result">
             Perfect for if you&apos;re looking for soft, nourished skin, our
             moisturizing body washes are made with skin-natural nutrients that
             work with your skin to replenish moisture. With a light formula, the

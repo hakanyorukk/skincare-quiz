@@ -1,16 +1,35 @@
-.heading-primary {
+.heading-primary-home {
   font-family: "Lora", serif;
   color: $color-white;
-  font-size: 3.6rem;
-  padding: 0rem 10rem;
-  font-weight: 400;
+  font-size: 4rem;
+  padding: 0rem 15rem;
+  font-family: 400;
+  margin-bottom: 1rem;
 }
 
-.heading-secondary {
+.heading-secondary-home {
   font-family: "Montserrat", sans-serif;
   color: $color-white;
   font-size: 1.4rem;
   font-weight: 300;
   text-align: center;
+  padding: 0rem 25rem;
+}
+
+.heading-primary-result {
+  font-family: "Lora", serif;
+  color: $color-white;
+  font-size: 3.6rem;
   padding: 0rem 10rem;
+  font-family: 400;
+  letter-spacing: 0.1rem;
+}
+
+.heading-secondary-result {
+  font-family: "Montserrat", sans-serif;
+  color: $color-white;
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-align: center;
+  padding: 0rem 5rem;
 }
