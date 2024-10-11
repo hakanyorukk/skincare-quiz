@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
-import { questions } from "../utils/utils";
+
 import { useQuiz } from "../context/QuizContext";
+import { questions } from "../utils/data";
 
 function QuestionItem({ questionId }) {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ function QuestionItem({ questionId }) {
               answers[questionId] === answer ? " selected" : ""
             }`}
           >
-            {answer}
+            <p>{answer}</p>
           </button>
         ))}
       </div>

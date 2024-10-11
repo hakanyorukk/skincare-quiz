@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { questions } from "../utils/utils";
+import { questions } from "../utils/data";
 
 function HomeContent() {
   const navigate = useNavigate();
@@ -15,11 +15,11 @@ function HomeContent() {
       <div className="home-text">
         <div className="home-text-box">
           <h1 className="heading-primary-home">
-            Build a self care routine suitable for you
+            Build a self care routine <br /> suitable for you
           </h1>
           <h3 className="heading-secondary-home">
-            Take out test to get a personalised self care routine bassed on your
-            needs.
+            Take out test to get a personalised self care <br /> routine bassed
+            on your needs.
           </h3>
           <button
             className="home-button"

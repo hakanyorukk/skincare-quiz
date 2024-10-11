@@ -51,9 +51,10 @@
   border: none;
   cursor: pointer;
   transition: transform 0.3s ease;
+  font-family: "Poppins", sans-serif;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
   }
 
   &:active {

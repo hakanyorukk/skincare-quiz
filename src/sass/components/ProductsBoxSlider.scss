@@ -59,17 +59,17 @@
     color: $color-black;
 
     h1 {
-      font-weight: 500;
+      font-weight: 400;
       margin-top: 2.6rem;
-      font-family: "Lora", serif;
+      font-family: "Poppins", sans-serif;
       font-size: 3rem;
       text-align: center;
       margin-bottom: 1.4rem;
     }
 
     p {
-      font-family: "Montserrat", sans-serif;
-      font-size: 1.6rem;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.4rem;
     }
   }
 
@@ -78,26 +78,29 @@
     border-radius: 1rem;
     width: 300px;
     height: 360px;
-    //border: 3px solid red;
+    background-color: $color-white;
     color: $color-black;
     overflow: hidden;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    &-img {
+      height: 70%;
+    }
 
     &__box {
       display: flex;
       flex-direction: column;
       padding: 1rem 2rem;
-      // border: 3px solid red;
       align-items: center;
-      height: 25%;
+      height: 30%;
       justify-content: space-between;
 
       h1 {
-        font-weight: 600;
-        font-family: "Lora", serif;
-        //font-size: 3rem;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
         text-align: center;
         margin-bottom: 0.4rem;
         font-size: 1.6rem;
@@ -106,7 +109,7 @@
 
       p {
         font-weight: 500;
-        font-family: "Lora", serif;
+        font-family: "Poppins", serif;
         //font-size: 3rem;
         text-align: center;
         margin-bottom: 1.4rem;
@@ -115,29 +118,36 @@
       }
     }
 
-    &-img {
+    &-img__main {
       border-radius: 1rem;
-      position: relative;
-      background-color: #ebece7;
+      background-color: $color-white;
+      display: flex;
+      object-fit: cover;
+      width: 80%;
+      margin: 0 auto;
+      //scale: 0.85;
+      transition: all 0.3s ease-in-out 0.2s;
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+
+    &-fav {
+      position: absolute;
+      top: 1.6rem;
+      right: 1.6rem;
+      width: 2.6rem;
+      height: 2.6rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    &__main {
       display: flex;
       object-fit: cover;
       width: 100%;
-      height: 75%;
-      &-fav {
-        position: absolute;
-        top: 1.6rem;
-        right: 1.6rem;
-        width: 2.6rem;
-        height: 2.6rem;
-        cursor: pointer;
-        border: none;
-        background: none;
-      }
-      &__main {
-        display: flex;
-        object-fit: cover;
-        width: 100%;
-      }
     }
   }
 

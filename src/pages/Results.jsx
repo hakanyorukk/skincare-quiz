@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
 import ProductsBoxSlider from "../components/ProductsBoxSlider";
+import { useQuiz } from "../context/QuizContext";
 
 function Results() {
   const navigate = useNavigate();
+
+  const { clearingAnswers } = useQuiz();
 
   //console.log(filteredProducts[0].id);
   return (
@@ -18,7 +21,7 @@ function Results() {
       <div className="results">
         <div className="results-box">
           <h1 className="heading-primary-result">
-            Build you everyday self care routine.
+            Build you everyday self <br /> care routine.
           </h1>
           <h3 className="heading-secondary-result">
             Perfect for if you&apos;re looking for soft, nourished skin, our
@@ -28,8 +31,14 @@ function Results() {
             by choosing relaxing fragrances you can add a moment of calm to the
             end of your day.
           </h3>
-          <button className="retake-button" onClick={() => navigate("/")}>
-            Retake the quiz
+          <button
+            className="retake-button"
+            onClick={() => {
+              clearingAnswers();
+              navigate("/");
+            }}
+          >
+            <p>Retake the quiz</p>
           </button>
         </div>
       </div>

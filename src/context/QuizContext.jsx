@@ -1,14 +1,13 @@
+/* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useState } from "react";
 
 const QuizContext = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useQuiz = () => useContext(QuizContext);
 
 export const QuizProvider = ({ children }) => {
   const [answers, setAnswers] = useState({});
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [totalQuestions] = useState(5);
-
   const [products, setProducts] = useState([]);
   //console.log(products);
 
@@ -68,24 +67,19 @@ export const QuizProvider = ({ children }) => {
     setFilteredProducts(matchingProducts);
   }, [answers, products]);
 
-  const nextQuestion = () => setCurrentQuestion((prev) => prev + 1);
-  const prevQuestion = () =>
-    setCurrentQuestion((prev) => Math.max(prev - 1, 0));
+  // const nextQuestion = () => setCurrentQuestion((prev) => prev + 1);
+  //const prevQuestion = () =>
+  //  setCurrentQuestion((prev) => Math.max(prev - 1, 0));
 
-  const progress = (currentQuestion / totalQuestions) * 100;
+  const clearingAnswers = () => setAnswers({});
 
   return (
     <QuizContext.Provider
       value={{
         answers,
         updateAnswer,
-        currentQuestion,
-        nextQuestion,
-        prevQuestion,
-        progress,
-        totalQuestions,
-        products,
         filteredProducts,
+        clearingAnswers,
       }}
     >
       {children}

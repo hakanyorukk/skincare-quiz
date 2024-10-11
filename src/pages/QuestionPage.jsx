@@ -15,7 +15,6 @@ function Questions() {
     <section className="question-section">
       <main className="question">
         <QuestionItem questionId={questionId} />
-
         <div className="question-progressbar">
           <CircularProgress
             currentQuestion={currentQuestion}

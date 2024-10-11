@@ -8,22 +8,21 @@
 
 .question {
   display: flex;
-  max-width: 130rem;
+  width: 120rem;
   min-height: 40rem;
 
   &-box {
-    width: 85%;
+    width: 95%;
+    //border: 3px solid red;
     color: $color-black;
     justify-content: center;
     &__title {
       font-size: 4.6rem;
-      font-weight: 400; // Thinner font weight
-      letter-spacing: 0.1rem;
-      font-family: "Lato", sans-serif; // Different font family
+      font-weight: 300;
+      font-family: "Poppins", sans-serif;
       text-align: center;
-      padding: 2rem 4rem;
-      max-width: 70rem;
-
+      padding: 2rem 2rem;
+      max-width: 65rem;
       margin-inline: auto;
     }
 
@@ -38,20 +37,42 @@
     }
 
     &__answer {
-      font-family: "Montserrat", sans-serif;
+      font-family: "Poppins", sans-serif;
       color: $color-black;
       display: flex;
       justify-content: start;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       border: 1px solid $color-border;
       padding: 0.8rem 2.4rem;
       border-radius: 0.6rem;
       cursor: pointer;
       background: none;
       min-width: 18rem;
+      position: relative;
+      box-sizing: border-box;
 
-      &.selected,
-      &:hover {
+      p {
+        z-index: 100;
+        color: $color-black;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $color-primary;
+        left: 0;
+        bottom: 0;
+        transform: scale(0, 1);
+        transform-origin: 0% 100%;
+        border-radius: 0.6rem;
+        transition: transform 0.25s ease-out 0.2s;
+      }
+
+      &:hover::after,
+      &.selected {
+        transform: scale(1, 1);
         background-color: $color-primary;
       }
     }
@@ -60,25 +81,41 @@
       display: flex;
       justify-content: center;
       gap: 3rem;
+      margin-top: 4rem;
       align-items: center;
 
       &__back {
+        font-family: "Poppins", sans-serif;
         cursor: pointer;
         background-color: transparent;
         border: none;
         border-bottom: 1px solid $color-secondary;
         color: $color-secondary;
+        transform: translateX(0px);
+        transition: transform 0.25s ease 0.1s;
+
+        &:hover {
+          transform: translateX(-2px);
+        }
       }
 
       &__forward {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
         cursor: pointer;
         padding: 1.2rem 3rem;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         background-color: $color-primary;
         display: flex;
         align-items: center;
         border: none;
         border-radius: 0.8rem;
+        transform: translateX(0px);
+        transition: transform 0.25s ease-out 0.2s;
+
+        &:hover {
+          transform: translateX(6px);
+        }
 
         span {
           gap: 1rem;
@@ -93,6 +130,5 @@
     width: 15%;
     position: relative;
     margin-top: 1rem;
-    margin-left: 4rem;
   }
 }

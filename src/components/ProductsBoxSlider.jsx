@@ -8,7 +8,7 @@ function ProductsBoxSlider() {
   const { wishlist } = useWishlist();
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // console.log(wishlist);
+  console.log(wishlist);
 
   const nextCards = () => {
     setCurrentIndex(currentIndex + 1);
@@ -37,7 +37,7 @@ function ProductsBoxSlider() {
 
   //const dividedArray = divideArrayWithIndices(filteredProducts);
   const dividedArray = divideArrayWithIndices(sortedProducts);
-  console.log(dividedArray.length);
+  //console.log(dividedArray.length);
   return (
     <div className="products">
       <div className="products-box">
