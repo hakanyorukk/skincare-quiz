@@ -3,11 +3,28 @@ import { useNavigate } from "react-router-dom";
 
 import { useQuiz } from "../context/QuizContext";
 import { questions } from "../utils/data";
+import toast from "react-hot-toast";
 
 function QuestionItem({ questionId }) {
   const navigate = useNavigate();
 
   const { answers, updateAnswer } = useQuiz();
+  console.log(Number([answers].length));
+  console.log(questionId);
+
+  const handleNextQuestion = () => {
+    if (!answers[questionId]) {
+      toast.error("Please select an answer.");
+      return; // Exit the function if no answer is selected
+    }
+
+    // Proceed to the next question
+    if (questionId - 1 === totalQuestions - 1) {
+      navigate(`/results`);
+    } else {
+      navigate(`/question/${questions[questionId].id}`);
+    }
+  };
 
   const totalQuestions = 5;
   return (
@@ -43,24 +60,18 @@ function QuestionItem({ questionId }) {
         >
           Back
         </button>
-
-        {questionId - 1 === totalQuestions - 1 ? (
-          <button
-            className="question-box__buttons__forward"
-            onClick={() => navigate(`/results`)}
-          >
+        <button
+          className="question-box__buttons__forward"
+          onClick={handleNextQuestion}
+        >
+          {questionId - 1 === totalQuestions - 1 ? (
             <span>Discover your results</span>
-          </button>
-        ) : (
-          <button
-            className="question-box__buttons__forward"
-            onClick={() => navigate(`/question/${questions[questionId].id}`)}
-          >
+          ) : (
             <span>
               Next question <img src="/img/arrow.svg" />
             </span>
-          </button>
-        )}
+          )}
+        </button>
       </div>
     </div>
   );
