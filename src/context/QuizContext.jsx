@@ -67,10 +67,6 @@ export const QuizProvider = ({ children }) => {
     setFilteredProducts(matchingProducts);
   }, [answers, products]);
 
-  // const nextQuestion = () => setCurrentQuestion((prev) => prev + 1);
-  //const prevQuestion = () =>
-  //  setCurrentQuestion((prev) => Math.max(prev - 1, 0));
-
   const clearingAnswers = () => setAnswers({});
 
   return (
