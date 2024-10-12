@@ -4,13 +4,18 @@ import { useWishlist } from "../context/WishlistContext";
 /* eslint-disable react/prop-types */
 function ProductItem({ product }) {
   const { toggleWishlist, wishlist } = useWishlist();
-  const [fav, setFav] = useState(true);
-  const isWishlisted = wishlist.some((item) => item.id === product.id);
   console.log(wishlist);
 
+  const [isWhistled, setIsWhistled] = useState(
+    wishlist.some((item) => item.id === product.id)
+  );
+
   const handleAddWishlist = (product) => {
+    //adding whislist to local storage
     toggleWishlist(product);
-    setFav(wishlist.every((item) => item.id === product.id) && !fav);
+
+    //changing the ui state
+    setIsWhistled(!isWhistled);
   };
 
   return (
@@ -25,7 +30,7 @@ function ProductItem({ product }) {
           className="products-items-fav"
           onClick={() => handleAddWishlist(product)}
         >
-          {isWishlisted || !fav ? (
+          {isWhistled ? (
             <img src="/img/heart-filled.svg" />
           ) : (
             <img src="/img/heart-outline.svg" />

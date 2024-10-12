@@ -14,6 +14,10 @@ function ProductsBoxSlider() {
     setCurrentIndex(currentIndex + 1);
   };
 
+  const prevCards = () => {
+    setCurrentIndex(currentIndex - 1);
+  };
+
   function divideArrayWithIndices(arr) {
     const result = [];
 
@@ -40,6 +44,13 @@ function ProductsBoxSlider() {
   //console.log(dividedArray.length);
   return (
     <div className="products">
+      <div className="products-button-prev">
+        {currentIndex + 1 >= 2 && (
+          <button onClick={prevCards}>
+            <img src="/img/frame.svg" />
+          </button>
+        )}
+      </div>
       <div className="products-box">
         <div className="products-box-all">
           <div className="products-text">
@@ -73,7 +84,7 @@ function ProductsBoxSlider() {
           ))}
         </div>
       </div>
-      <div className="products-button">
+      <div className="products-button-next">
         {dividedArray.length !== currentIndex + 1 && (
           <button onClick={nextCards}>
             <img src="/img/frame.svg" />

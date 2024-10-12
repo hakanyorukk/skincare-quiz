@@ -119,11 +119,11 @@
     }
 
     &-img__main {
-      border-radius: 1rem;
       background-color: $color-white;
       display: flex;
       object-fit: cover;
-      width: 80%;
+      padding-top: 2rem;
+      width: 75%;
       margin: 0 auto;
       //scale: 0.85;
       transition: all 0.3s ease-in-out 0.2s;
@@ -151,7 +151,7 @@
     }
   }
 
-  &-button {
+  &-button-next {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,6 +159,11 @@
     width: 5rem;
     //border: 3px solid red;
     margin-left: 2.5rem;
+    transition: transform 0.2s ease-in-out 0.2s;
+
+    &:hover {
+      transform: translateX(8px);
+    }
 
     button {
       display: flex;
@@ -171,6 +176,36 @@
 
       img {
         width: 1.4rem;
+      }
+    }
+  }
+
+  &-button-prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    width: 5rem;
+    //border: 3px solid red;
+    margin-right: 2.5rem;
+    transition: transform 0.2s ease-in-out 0.2s;
+
+    &:hover {
+      transform: translateX(-8px);
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      padding: 1.8rem;
+      border-radius: 100%;
+      border: none;
+      margin: 1rem;
+      cursor: pointer;
+
+      img {
+        width: 1.4rem;
+        rotate: 180deg;
       }
     }
   }
