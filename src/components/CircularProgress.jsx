@@ -2,9 +2,9 @@ function CircularProgress({ currentQuestion, totalQuestions }) {
   //const currentQuestion = 2;
   //const totalQuestions = 5;
 
-  const radius = 55; // Radius of the circle
-  const strokeWidth = 7; // Stroke width of the circle
-  const diameter = 2 * radius + strokeWidth; // Calculated diameter including stroke width
+  const radius = 55;
+  const strokeWidth = 7;
+  const diameter = 2 * radius + strokeWidth;
   const circumference = 2 * Math.PI * radius;
   const progress = (currentQuestion / totalQuestions) * 100;
   const strokeDashoffset = circumference - (progress / 100) * circumference;
