@@ -28,7 +28,7 @@ function QuestionItem({ questionId }) {
 
   const totalQuestions = 5;
   return (
-    <div className="question-box">
+    <div className="question-box" key={questionId}>
       <h1 className="question-box__title">
         {questions[questionId - 1].question}
       </h1>

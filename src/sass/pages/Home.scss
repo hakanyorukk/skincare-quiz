@@ -40,6 +40,7 @@
 
   &-box {
     max-width: 80rem;
+    //animation: moveInBottom 1s ease-out;
   }
 }
 
@@ -52,6 +53,7 @@
   cursor: pointer;
   transition: transform 0.3s ease;
   font-family: "Poppins", sans-serif;
+  animation: moveInBottom 1s ease-in-out;
 
   &:hover {
     transform: translateY(-3px);
