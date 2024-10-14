@@ -33,6 +33,11 @@
   //letter-spacing: 0.1rem;
   line-height: 4.6rem;
   animation: moveInTop 0.8s ease-in-out;
+
+  @include respond(tab-port) {
+    //width < 900?
+    padding-top: 5rem;
+  }
 }
 
 .heading-secondary-result {

@@ -13,7 +13,7 @@
 
   @include respond(tab-port) {
     //width < 900?
-    height: 60%;
+    height: 58%;
   }
 
   &-box {
@@ -113,7 +113,7 @@
 
       @include respond(tab-port) {
         //width < 900?
-        font-size: 1.6rem; //1rem = 8px
+        font-size: 1.8rem; //1rem = 8px
       }
     }
   }
