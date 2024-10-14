@@ -10,10 +10,17 @@
   display: flex;
   width: 120rem;
   min-height: 40rem;
+  //border: 3px solid red;
+
+  @include respond(tab-port) {
+    //width < 900?
+    display: grid;
+    padding: 2rem;
+  }
 
   &-box {
     width: 95%;
-    //border: 3px solid red;
+
     color: $color-black;
     justify-content: center;
     animation: moveInRight 0.2s ease;
@@ -135,8 +142,16 @@
   }
 
   &-progressbar {
-    width: 15%;
+    //width: 15%;
+    display: flex;
+    justify-content: center;
     position: relative;
     margin-top: 1rem;
+    //border: 3px solid red;
+
+    @include respond(tab-port) {
+      //width < 900?
+      margin-top: 5rem;
+    }
   }
 }

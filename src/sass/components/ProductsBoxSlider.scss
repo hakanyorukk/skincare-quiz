@@ -11,14 +11,28 @@
   justify-content: center;
   align-items: start;
 
+  @include respond(tab-port) {
+    //width < 900?
+    height: 60%;
+  }
+
   &-box {
     display: flex;
     flex-direction: column;
+    position: relative;
 
     &-all {
       display: flex;
       gap: 4rem;
       overflow: hidden;
+      justify-content: center;
+      //border: 3px solid red;
+
+      @include respond(tab-port) {
+        //width < 900?
+        display: grid;
+        gap: 5rem;
+      }
     }
 
     &-slider {
@@ -30,6 +44,11 @@
       width: 100%;
       gap: 1rem;
 
+      @include respond(tab-port) {
+        //width < 900?
+        margin-bottom: 3rem;
+      }
+
       &-dots {
         background-color: $color-empty-dot;
         width: 0.8rem;
@@ -38,6 +57,12 @@
         border: none;
         cursor: pointer;
 
+        @include respond(tab-port) {
+          //width < 900?
+          width: 1.4rem;
+          height: 1.4rem;
+        }
+
         &.selected,
         &:active,
         &:focus {
@@ -45,6 +70,12 @@
           height: 1rem;
           background-color: $color-border;
           border: none;
+
+          @include respond(tab-port) {
+            //width < 900?
+            width: 1.6rem;
+            height: 1.6rem;
+          }
         }
       }
     }
@@ -60,6 +91,13 @@
     color: $color-black;
     animation: moveInBottom 0.8s ease-in-out;
 
+    @include respond(tab-port) {
+      //width < 900?
+      height: 100%;
+      width: 300px;
+      padding-bottom: 3rem;
+    }
+
     h1 {
       font-weight: 400;
       margin-top: 2.6rem;
@@ -67,11 +105,21 @@
       font-size: 3rem;
       text-align: center;
       margin-bottom: 1.4rem;
+
+      @include respond(tab-port) {
+        //width < 900?
+        font-size: 4rem; //1rem = 8px
+      }
     }
 
     p {
       font-family: "Poppins", sans-serif;
       font-size: 1.4rem;
+
+      @include respond(tab-port) {
+        //width < 900?
+        font-size: 2rem; //1rem = 8px
+      }
     }
   }
 
@@ -88,6 +136,17 @@
     align-items: center;
     position: relative;
     animation: moveInRight 0.5s ease-in-out;
+    //border: 3px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+
+    @include respond(tab-port) {
+      //width < 900?
+      height: 360px;
+      width: 270px;
+    }
 
     &-img {
       height: 70%;
@@ -106,8 +165,13 @@
         font-family: "Poppins", sans-serif;
         text-align: center;
         margin-bottom: 0.4rem;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         letter-spacing: 0.08rem;
+
+        @include respond(tab-port) {
+          //width < 900?
+          font-size: 2.2rem;
+        }
       }
 
       p {
@@ -118,6 +182,11 @@
         margin-bottom: 1.4rem;
         letter-spacing: 0.1rem;
         font-size: 1.9rem;
+
+        @include respond(tab-port) {
+          //width < 900?
+          font-size: 3rem;
+        }
       }
     }
 
@@ -145,6 +214,12 @@
       cursor: pointer;
       border: none;
       background: none;
+
+      @include respond(tab-port) {
+        //width < 900?
+        right: 4rem;
+        top: 2rem;
+      }
     }
 
     &__main {
@@ -156,13 +231,24 @@
 
   &-button-next {
     display: flex;
+    position: absolute;
+    top: 40%;
+    right: 12%;
     justify-content: center;
     align-items: center;
-    height: 95%;
+    //height: 95%;
     width: 5rem;
     //border: 3px solid red;
     margin-left: 2.5rem;
     transition: transform 0.2s ease-in-out 0.2s;
+
+    @include respond(tab-port) {
+      //width < 900?
+      top: 60%;
+      right: 8%;
+      margin-top: 35rem;
+      width: 0rem;
+    }
 
     &:hover {
       transform: translateX(8px);
@@ -177,8 +263,18 @@
       margin: 1rem;
       cursor: pointer;
 
+      @include respond(tab-port) {
+        //width < 900?
+        padding: 2rem;
+      }
+
       img {
         width: 1.4rem;
+
+        @include respond(tab-port) {
+          //width < 900?
+          width: 2rem;
+        }
       }
     }
   }
@@ -187,11 +283,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95%;
+    position: absolute;
+    top: 40%;
+    left: 12%;
     width: 5rem;
+    z-index: 1;
     //border: 3px solid red;
     margin-right: 2.5rem;
     transition: transform 0.2s ease-in-out 0.2s;
+
+    @include respond(tab-port) {
+      //width < 900?
+      top: 60%;
+      left: 8%;
+      margin-top: 35rem;
+      width: 0rem;
+    }
 
     &:hover {
       transform: translateX(-8px);
@@ -206,9 +313,19 @@
       margin: 1rem;
       cursor: pointer;
 
+      @include respond(tab-port) {
+        //width < 900?
+        padding: 2rem;
+      }
+
       img {
         width: 1.4rem;
         rotate: 180deg;
+
+        @include respond(tab-port) {
+          //width < 900?
+          width: 2rem;
+        }
       }
     }
   }

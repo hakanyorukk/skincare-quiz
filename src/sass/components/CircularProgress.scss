@@ -6,6 +6,12 @@
   align-items: center;
   font-family: "Poppins", sans-serif;
 
+  @include respond(tab-port) {
+    //width < 900?
+    width: 100px;
+    height: 100px;
+  }
+
   .progress-circle {
     position: relative;
     transform: rotate(-90deg);
