@@ -28,6 +28,11 @@
   text-align: center;
   background-color: rgba(0, 0, 0, 0.6);
 
+  @include respond(phone) {
+    //width < 900?
+    height: 54%;
+  }
+
   &-box {
     padding-top: 4rem;
     //border: 3px solid red;

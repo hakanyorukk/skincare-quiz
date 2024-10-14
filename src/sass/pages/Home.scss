@@ -7,8 +7,9 @@
 
 .image-container {
   position: relative;
-  height: 50vh;
+  height: 50%;
   flex: 1;
+  //border: 3px solid red;
 }
 
 .main-image {
@@ -34,9 +35,14 @@
   margin-left: auto;
   margin-right: auto;
   height: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
   //max-width: 80rem;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
+
+  @include respond(phone) {
+    //width < 900?
+    height: 54%;
+  }
 
   &-box {
     max-width: 80rem;
