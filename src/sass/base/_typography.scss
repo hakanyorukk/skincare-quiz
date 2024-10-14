@@ -18,6 +18,11 @@
   text-align: center;
   line-height: 2.6rem;
   animation: moveInBottom 0.8s ease-in-out;
+
+  @include respond(tab-port) {
+    //width < 900?
+    font-size: 1.6rem;
+  }
 }
 
 .heading-primary-result {

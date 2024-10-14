@@ -105,11 +105,6 @@
       font-size: 3rem;
       text-align: center;
       margin-bottom: 1.4rem;
-
-      @include respond(tab-port) {
-        //width < 900?
-        font-size: 4rem; //1rem = 8px
-      }
     }
 
     p {
@@ -118,7 +113,7 @@
 
       @include respond(tab-port) {
         //width < 900?
-        font-size: 2rem; //1rem = 8px
+        font-size: 1.6rem; //1rem = 8px
       }
     }
   }
@@ -244,8 +239,8 @@
 
     @include respond(tab-port) {
       //width < 900?
-      top: 60%;
-      right: 8%;
+      top: 30%;
+      right: 12%;
       margin-top: 35rem;
       width: 0rem;
     }
@@ -294,8 +289,8 @@
 
     @include respond(tab-port) {
       //width < 900?
-      top: 60%;
-      left: 8%;
+      top: 30%;
+      left: 12%;
       margin-top: 35rem;
       width: 0rem;
     }
