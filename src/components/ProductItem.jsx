@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useWishlist } from "../context/WishlistContext";
 
-/* eslint-disable react/prop-types */
 function ProductItem({ product }) {
   const { toggleWishlist, wishlist } = useWishlist();
   console.log(wishlist);
@@ -11,10 +10,8 @@ function ProductItem({ product }) {
   );
 
   const handleAddWishlist = (product) => {
-    //adding whislist to local storage
     toggleWishlist(product);
 
-    //changing the ui state
     setIsWhistled(!isWhistled);
   };
 

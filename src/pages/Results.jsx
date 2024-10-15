@@ -8,7 +8,6 @@ function Results() {
 
   const { clearingAnswers } = useQuiz();
 
-  //console.log(filteredProducts[0].id);
   return (
     <section className="section-results">
       <div className="image-container">

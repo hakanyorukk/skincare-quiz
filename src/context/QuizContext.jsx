@@ -1,15 +1,12 @@
-/* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useState } from "react";
 
 const QuizContext = createContext();
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useQuiz = () => useContext(QuizContext);
 
 export const QuizProvider = ({ children }) => {
   const [answers, setAnswers] = useState({});
   const [products, setProducts] = useState([]);
-  //console.log(products);
 
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -62,7 +59,6 @@ export const QuizProvider = ({ children }) => {
         return matchesTitle || matchesBodyHtml || matchesTags;
       });
     });
-    //console.log(matchingProducts);
 
     setFilteredProducts(matchingProducts);
   }, [answers, products]);

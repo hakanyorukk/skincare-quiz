@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 
 import { useQuiz } from "../context/QuizContext";
@@ -15,10 +14,9 @@ function QuestionItem({ questionId }) {
   const handleNextQuestion = () => {
     if (!answers[questionId]) {
       toast.error("Please select an answer.");
-      return; // Exit the function if no answer is selected
+      return;
     }
 
-    // Proceed to the next question
     if (questionId - 1 === totalQuestions - 1) {
       navigate(`/results`);
     } else {
